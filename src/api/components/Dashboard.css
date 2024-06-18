@@ -1,0 +1,195 @@
+/* frontend/src/components/Dashboard.css */
+
+.dashboard-container {
+    background: linear-gradient(to right, #224c8c, #3a7ec3, #8a4df4, #896ca0, #4372ac, #4d8af4, #3a7ec3, #224c8c);
+    background-size: 400% 400%;
+    animation: gradientAnimation 3s ease forwards;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+    /* Beautiful background colors */
+    padding: 20px;
+    min-height: 100vh;
+    /* Full screen height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+    /* Ensure text is visible on dark background */
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 10%;
+    }
+
+    100% {
+        background-position: 50% 10%;
+    }
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: center;
+    /* Centered */
+    align-items: center;
+    color: white;
+}
+
+.dashboard-header h1 {
+    text-align: center;
+    /* Center the title */
+}
+
+.dashboard-header button {
+    margin-left: auto;
+    /* Align right */
+    margin-right: 5px;
+    /* Space from right edge */
+    padding: 8px 15px;
+    /* Larger padding */
+    font-size: 16px;
+    /* Larger font size */
+    background-color: #273a58;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.dashboard-header button:hover {
+    background-color: #2f2b41;
+}
+
+.dashboard-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Center content */
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+}
+
+input,
+button {
+    margin: 5px;
+    padding: 15px;
+    /* Larger padding */
+    border-radius: 5px;
+    border: none;
+}
+
+button {
+    background-color: #010307;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #273a58;
+}
+
+input[type="text"] {
+    width: calc(60% - 20px);
+    /* 60% width minus padding */
+}
+
+.create-group-button {
+    width: 200px;
+    /* Button width */
+    padding: 15px;
+    /* Larger padding */
+    background-color: #273a58;
+    color: white;
+}
+
+.create-group-button:hover {
+    background-color: #867faa;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background: rgba(255, 255, 255, 0.1);
+    /* Slightly transparent white */
+    margin: 10px 0;
+    padding: 15px;
+    /* Larger padding */
+    border-radius: 5px;
+    color: #ffffff;
+    /* White text for visibility */
+    display: flex;
+    flex-direction: column;
+}
+
+li .button-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+li .button-container button,
+li .button-container input,
+li .button-container select {
+    flex: 1 1 auto;
+    min-width: 150px;
+}
+
+li .button-container input[type="email"] {
+    flex: 2 1 auto;
+}
+
+li button {
+    margin-left: 10px;
+    background-color: #4d8ff4;
+    color: white;
+}
+
+li button:hover {
+    background-color: #8078ac;
+}
+
+.dashboard-content-inner {
+    width: calc(75% - 20px);
+    /* 75% width minus padding */
+}
+
+.image-container {
+    position: absolute;
+    bottom: 60px;
+    left: 20px;
+    width: 90%;
+    max-width: 500px;
+    margin: 20px 0;
+    display: flex;
+    justify-content: flex-start;
+    /* Align to the left */
+    align-items: center;
+    opacity: 0;
+    transform: translateY(100%);
+    animation: slideUpFadeIn 1.5s ease-out forwards;
+}
+
+@keyframes slideUpFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+}

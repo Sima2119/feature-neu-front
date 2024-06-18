@@ -1,0 +1,81 @@
+.button {
+    position: relative;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background: #4d8ff4;
+    /* Match with background but darker for contrast */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.4s, color 0.4s;
+}
+
+.button:hover {
+    background-color: #d9b4ca;
+    /* Dark blue for animation */
+    color: white;
+    /* Ensure text remains white on hover */
+}
+
+.button span {
+    position: relative;
+    z-index: 1;
+}
+
+.button::before,
+.button::after,
+.button span::before,
+.button span::after {
+    content: '';
+    position: absolute;
+    background: #ffffff;
+    /* Dark blue for animation */
+    transition: all 0.1s;
+}
+
+.button::before,
+.button::after {
+    width: 2px;
+    height: 0;
+}
+
+.button::before {
+    top: 0;
+    left: 0;
+    transition-delay: 0.3s;
+}
+
+.button::after {
+    bottom: 0;
+    right: 0;
+    transition-delay: 0.2s;
+}
+
+.button span::before,
+.button span::after {
+    width: 0;
+    height: 2px;
+}
+
+.button span::before {
+    top: 0;
+    left: 0;
+    transition-delay: 0.1s;
+}
+
+.button span::after {
+    bottom: 0;
+    right: 0;
+}
+
+.button:hover::before,
+.button:hover::after {
+    height: 100%;
+}
+
+.button:hover span::before,
+.button:hover span::after {
+    width: 100%;
+}

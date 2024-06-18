@@ -1,0 +1,11 @@
+.hoverText {
+    display: inline-block;
+    position: relative;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.hoverText:hover {
+    transform: translateY(-10px);
+    color: #2f2b42;
+    /* Dark blue for animation */
+}
